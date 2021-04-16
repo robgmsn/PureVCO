@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="7.1.0">
+<eagle version="8.7.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
+<setting keepoldvectorfont="yes"/>
 <setting verticaltext="up"/>
 </settings>
 <grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
@@ -73,6 +74,7 @@
 <layer number="96" name="Values" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="97" name="Info" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="98" name="Guide" color="6" fill="1" visible="yes" active="yes"/>
+<layer number="99" name="SpiceOrder" color="7" fill="1" visible="no" active="no"/>
 <layer number="100" name="Muster" color="7" fill="1" visible="no" active="no"/>
 <layer number="101" name="Patch_Top" color="12" fill="4" visible="yes" active="yes"/>
 <layer number="102" name="Vscore" color="7" fill="1" visible="yes" active="yes"/>
@@ -86,6 +88,7 @@
 <layer number="110" name="fp0" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="111" name="LPC17xx" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="112" name="tSilk" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="113" name="ReferenceLS" color="7" fill="1" visible="no" active="no"/>
 <layer number="116" name="Patch_BOT" color="9" fill="4" visible="yes" active="yes"/>
 <layer number="118" name="Rect_Pads" color="7" fill="1" visible="no" active="no"/>
 <layer number="121" name="_tsilk" color="7" fill="1" visible="yes" active="yes"/>
@@ -131,6 +134,9 @@
 <layer number="222" name="222bmp" color="23" fill="1" visible="no" active="no"/>
 <layer number="223" name="223bmp" color="24" fill="1" visible="no" active="no"/>
 <layer number="224" name="224bmp" color="25" fill="1" visible="no" active="no"/>
+<layer number="231" name="Eagle3D_PG1" color="7" fill="1" visible="no" active="no"/>
+<layer number="232" name="Eagle3D_PG2" color="7" fill="1" visible="no" active="no"/>
+<layer number="233" name="Eagle3D_PG3" color="7" fill="1" visible="no" active="no"/>
 <layer number="248" name="Housing" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="249" name="Edge" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="250" name="Descript" color="3" fill="1" visible="no" active="no"/>
@@ -327,6 +333,17 @@
 <wire x1="1.075" y1="0.65" x2="1.075" y2="-0.65" width="0.1" layer="21"/>
 <wire x1="1.075" y1="-0.65" x2="1" y2="-0.65" width="0.1" layer="21"/>
 <circle x="-0.8" y="-0.35" radius="0.05" width="0.127" layer="21"/>
+</package>
+<package name="TRIMMER_TH3">
+<pad name="3" x="-2.5" y="0" drill="0.9" rot="R90"/>
+<pad name="2" x="0" y="0" drill="0.9" rot="R90"/>
+<pad name="1" x="2.5" y="0" drill="0.9" rot="R90"/>
+<wire x1="-4.75" y1="2.54" x2="-4.75" y2="-2.54" width="0.127" layer="21"/>
+<wire x1="-4.75" y1="-2.54" x2="4.75" y2="-2.54" width="0.127" layer="21"/>
+<wire x1="4.75" y1="-2.54" x2="4.75" y2="2.54" width="0.127" layer="21"/>
+<wire x1="4.75" y1="2.54" x2="-4.75" y2="2.54" width="0.127" layer="21"/>
+<circle x="3.33375" y="-1.11125" radius="1.004021875" width="0.127" layer="21"/>
+<wire x1="3.33375" y1="-0.3175" x2="3.33375" y2="-1.9" width="0.4064" layer="21"/>
 </package>
 </packages>
 <symbols>
@@ -639,6 +656,23 @@
 <connect gate="G$2" pin="B" pad="B2"/>
 <connect gate="G$2" pin="C" pad="C2"/>
 <connect gate="G$2" pin="E" pad="E2"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="TRIMMER_TH3">
+<gates>
+<gate name="G$1" symbol="Q-POT" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="TRIMMER_TH3">
+<connects>
+<connect gate="G$1" pin="1" pad="1"/>
+<connect gate="G$1" pin="2" pad="2"/>
+<connect gate="G$1" pin="3" pad="3"/>
 </connects>
 <technologies>
 <technology name=""/>
@@ -13944,9 +13978,9 @@ Standard 10-pin dual row 0.1" header. Commonly used with AVR-ISP. Use with Spark
 <part name="GND9" library="supply1" deviceset="GND" device=""/>
 <part name="SUPPLY9" library="supply2" deviceset="+12V" device=""/>
 <part name="C6" library="rcl" deviceset="C-US" device="C0805K" value="22p"/>
-<part name="3K3" library="rcl" deviceset="R-US_" device="R0805" value="15K"/>
+<part name="R35" library="rcl" deviceset="R-US_" device="R0805" value="3K3"/>
 <part name="GND10" library="supply1" deviceset="GND" device=""/>
-<part name="3K1" library="rcl" deviceset="R-US_" device="R0805" value="9K1"/>
+<part name="R36" library="rcl" deviceset="R-US_" device="R0805" value="9K1"/>
 <part name="U2" library="INSTRUO" deviceset="QUAD_OPAMP" device=""/>
 <part name="R13" library="rcl" deviceset="R-US_" device="R0805" value="10K"/>
 <part name="R14" library="rcl" deviceset="R-US_" device="R0805" value="39K"/>
@@ -13965,7 +13999,7 @@ Standard 10-pin dual row 0.1" header. Commonly used with AVR-ISP. Use with Spark
 <part name="R20" library="rcl" deviceset="R-US_" device="R0805" value="22K*"/>
 <part name="R21" library="rcl" deviceset="R-US_" device="R0805" value="22K*"/>
 <part name="GND13" library="supply1" deviceset="GND" device=""/>
-<part name="R23" library="rcl" deviceset="R-US_" device="R0805" value="19K"/>
+<part name="R23" library="rcl" deviceset="R-US_" device="R0805" value="19k1"/>
 <part name="SUPPLY13" library="supply2" deviceset="-12V" device=""/>
 <part name="R24" library="rcl" deviceset="R-US_" device="R0805" value="2K"/>
 <part name="R25" library="rcl" deviceset="R-US_" device="R0805" value="2K"/>
@@ -13985,17 +14019,17 @@ Standard 10-pin dual row 0.1" header. Commonly used with AVR-ISP. Use with Spark
 <part name="GND17" library="supply1" deviceset="GND" device=""/>
 <part name="U3" library="INSTRUO" deviceset="DUAL_OPAMP" device=""/>
 <part name="R34" library="rcl" deviceset="R-US_" device="R0805" value="2K2"/>
-<part name="2M" library="rcl" deviceset="R-US_" device="R0805" value="2K2"/>
-<part name="2M1" library="rcl" deviceset="R-US_" device="R0805" value="2K2"/>
+<part name="R40" library="rcl" deviceset="R-US_" device="R0805" value="2M"/>
+<part name="R39" library="rcl" deviceset="R-US_" device="R0805" value="100K"/>
 <part name="GND18" library="supply1" deviceset="GND" device=""/>
 <part name="PWM_POT" library="INSTRUO" deviceset="Q-POT" device="" value="B100K"/>
-<part name="2M2" library="rcl" deviceset="R-US_" device="R0805" value="39K"/>
+<part name="R37" library="rcl" deviceset="R-US_" device="R0805" value="39K"/>
 <part name="SUPPLY17" library="supply2" deviceset="+12V" device=""/>
 <part name="SUPPLY18" library="supply2" deviceset="-12V" device=""/>
-<part name="2M3" library="rcl" deviceset="R-US_" device="R0805" value="120K"/>
+<part name="R38" library="rcl" deviceset="R-US_" device="R0805" value="120K"/>
 <part name="GND19" library="supply1" deviceset="GND" device=""/>
-<part name="2M4" library="rcl" deviceset="R-US_" device="R0805" value="2K2"/>
-<part name="2M5" library="rcl" deviceset="R-US_" device="R0805" value="2K2"/>
+<part name="R41" library="rcl" deviceset="R-US_" device="R0805" value="3K3"/>
+<part name="R42" library="rcl" deviceset="R-US_" device="R0805" value="1K5"/>
 <part name="GND20" library="supply1" deviceset="GND" device=""/>
 <part name="GND21" library="supply1" deviceset="GND" device=""/>
 <part name="C9" library="rcl" deviceset="C-US" device="C0805K" value="100n"/>
@@ -14015,18 +14049,18 @@ Standard 10-pin dual row 0.1" header. Commonly used with AVR-ISP. Use with Spark
 <part name="SAW" library="INSTRUO" deviceset="S_JACK" device="" value=""/>
 <part name="PULSE" library="INSTRUO" deviceset="S_JACK" device="" value=""/>
 <part name="TRI" library="INSTRUO" deviceset="S_JACK" device="" value=""/>
-<part name="TR1" library="INSTRUO" deviceset="TRIM_3269W" device="" value="100R"/>
 <part name="PWM_ATT" library="INSTRUO" deviceset="Q-POT" device="" value="B100K"/>
 <part name="GND24" library="supply1" deviceset="GND" device=""/>
 <part name="TR2" library="INSTRUO" deviceset="TRIM_3269W" device="" value="100K"/>
 <part name="TR3" library="INSTRUO" deviceset="TRIM_3269W" device="" value="100K"/>
 <part name="JP1" library="SparkFun-Connectors" deviceset="M05X2" device="SHD"/>
 <part name="T1" library="INSTRUO" deviceset="TRANS_PAIR" device=""/>
+<part name="TR1" library="INSTRUO" deviceset="TRIMMER_TH3" device="" value="100R"/>
 </parts>
 <sheets>
 <sheet>
 <plain>
-<text x="289.56" y="200.66" size="1.778" layer="92">Thermal Contact</text>
+<text x="281.94" y="198.12" size="1.778" layer="92">Thermal Contact</text>
 </plain>
 <instances>
 <instance part="D1" gate="G$1" x="43.18" y="101.6"/>
@@ -14074,9 +14108,9 @@ Standard 10-pin dual row 0.1" header. Commonly used with AVR-ISP. Use with Spark
 <instance part="GND9" gate="1" x="309.88" y="231.14"/>
 <instance part="SUPPLY9" gate="+12V" x="309.88" y="271.78"/>
 <instance part="C6" gate="G$1" x="378.46" y="246.38" rot="R270"/>
-<instance part="3K3" gate="G$1" x="368.3" y="236.22" rot="R90"/>
+<instance part="R35" gate="G$1" x="368.3" y="236.22" rot="R90"/>
 <instance part="GND10" gate="1" x="368.3" y="226.06"/>
-<instance part="3K1" gate="G$1" x="396.24" y="215.9" rot="R180"/>
+<instance part="R36" gate="G$1" x="396.24" y="215.9" rot="R180"/>
 <instance part="U2" gate="G$1" x="462.28" y="121.92" rot="MR180"/>
 <instance part="U2" gate="G$2" x="294.64" y="40.64" rot="MR180"/>
 <instance part="U2" gate="G$3" x="657.86" y="93.98" rot="MR180"/>
@@ -14123,17 +14157,17 @@ Standard 10-pin dual row 0.1" header. Commonly used with AVR-ISP. Use with Spark
 <instance part="U3" gate="G$3" x="76.2" y="111.76" rot="MR0"/>
 <instance part="U3" gate="G$4" x="76.2" y="76.2" rot="MR180"/>
 <instance part="R34" gate="G$1" x="467.36" y="86.36" rot="R270"/>
-<instance part="2M" gate="G$1" x="485.14" y="71.12"/>
-<instance part="2M1" gate="G$1" x="434.34" y="73.66"/>
+<instance part="R40" gate="G$1" x="485.14" y="71.12"/>
+<instance part="R39" gate="G$1" x="434.34" y="73.66"/>
 <instance part="GND18" gate="1" x="419.1" y="43.18"/>
 <instance part="PWM_POT" gate="G$1" x="360.68" y="45.72" rot="R90"/>
-<instance part="2M2" gate="G$1" x="383.54" y="68.58"/>
+<instance part="R37" gate="G$1" x="383.54" y="68.58"/>
 <instance part="SUPPLY17" gate="+12V" x="360.68" y="55.88"/>
 <instance part="SUPPLY18" gate="G$1" x="360.68" y="33.02"/>
-<instance part="2M3" gate="G$1" x="381" y="45.72"/>
+<instance part="R38" gate="G$1" x="381" y="45.72"/>
 <instance part="GND19" gate="1" x="342.9" y="63.5"/>
-<instance part="2M4" gate="G$1" x="513.08" y="50.8" rot="R90"/>
-<instance part="2M5" gate="G$1" x="513.08" y="35.56" rot="R90"/>
+<instance part="R41" gate="G$1" x="513.08" y="50.8" rot="R90"/>
+<instance part="R42" gate="G$1" x="513.08" y="35.56" rot="R90"/>
 <instance part="GND20" gate="1" x="513.08" y="22.86"/>
 <instance part="GND21" gate="1" x="279.4" y="27.94"/>
 <instance part="C9" gate="G$1" x="104.14" y="73.66"/>
@@ -14153,7 +14187,6 @@ Standard 10-pin dual row 0.1" header. Commonly used with AVR-ISP. Use with Spark
 <instance part="SAW" gate="G$1" x="619.76" y="144.78"/>
 <instance part="PULSE" gate="G$1" x="538.48" y="40.64"/>
 <instance part="TRI" gate="G$1" x="713.74" y="91.44"/>
-<instance part="TR1" gate="TR$1" x="215.9" y="165.1" rot="R90"/>
 <instance part="PWM_ATT" gate="G$1" x="370.84" y="68.58" rot="R90"/>
 <instance part="GND24" gate="1" x="370.84" y="55.88"/>
 <instance part="TR2" gate="TR$1" x="403.86" y="127" rot="R90"/>
@@ -14161,6 +14194,7 @@ Standard 10-pin dual row 0.1" header. Commonly used with AVR-ISP. Use with Spark
 <instance part="JP1" gate="G$1" x="22.86" y="93.98" rot="R180"/>
 <instance part="T1" gate="G$1" x="266.7" y="167.64" rot="MR0"/>
 <instance part="T1" gate="G$2" x="297.18" y="167.64"/>
+<instance part="TR1" gate="G$1" x="215.9" y="165.1" rot="R90"/>
 </instances>
 <busses>
 <bus name="B$1">
@@ -14444,7 +14478,7 @@ Standard 10-pin dual row 0.1" header. Commonly used with AVR-ISP. Use with Spark
 <wire x1="309.88" y1="233.68" x2="309.88" y2="236.22" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="3K3" gate="G$1" pin="1"/>
+<pinref part="R35" gate="G$1" pin="1"/>
 <pinref part="GND10" gate="1" pin="GND"/>
 <wire x1="368.3" y1="228.6" x2="368.3" y2="231.14" width="0.1524" layer="91"/>
 </segment>
@@ -14507,7 +14541,7 @@ Standard 10-pin dual row 0.1" header. Commonly used with AVR-ISP. Use with Spark
 <pinref part="PWM" gate="G$1" pin="GND"/>
 </segment>
 <segment>
-<pinref part="2M5" gate="G$1" pin="1"/>
+<pinref part="R42" gate="G$1" pin="1"/>
 <pinref part="GND20" gate="1" pin="GND"/>
 <wire x1="513.08" y1="25.4" x2="513.08" y2="27.94" width="0.1524" layer="91"/>
 <wire x1="513.08" y1="27.94" x2="513.08" y2="30.48" width="0.1524" layer="91"/>
@@ -14601,14 +14635,14 @@ Standard 10-pin dual row 0.1" header. Commonly used with AVR-ISP. Use with Spark
 <wire x1="215.9" y1="177.8" x2="210.82" y2="177.8" width="0.1524" layer="91"/>
 <wire x1="215.9" y1="177.8" x2="215.9" y2="170.18" width="0.1524" layer="91"/>
 <junction x="215.9" y="177.8"/>
-<pinref part="TR1" gate="TR$1" pin="3"/>
+<pinref part="TR1" gate="G$1" pin="3"/>
 </segment>
 </net>
 <net name="N$8" class="0">
 <segment>
 <wire x1="215.9" y1="160.02" x2="215.9" y2="157.48" width="0.1524" layer="91"/>
 <pinref part="R4" gate="G$1" pin="2"/>
-<pinref part="TR1" gate="TR$1" pin="1"/>
+<pinref part="TR1" gate="G$1" pin="1"/>
 </segment>
 </net>
 <net name="N$10" class="0">
@@ -14617,8 +14651,8 @@ Standard 10-pin dual row 0.1" header. Commonly used with AVR-ISP. Use with Spark
 <wire x1="266.7" y1="182.88" x2="231.14" y2="182.88" width="0.1524" layer="91"/>
 <wire x1="231.14" y1="182.88" x2="231.14" y2="165.1" width="0.1524" layer="91"/>
 <wire x1="231.14" y1="165.1" x2="220.98" y2="165.1" width="0.1524" layer="91"/>
-<pinref part="TR1" gate="TR$1" pin="2"/>
 <pinref part="T1" gate="G$1" pin="B"/>
+<pinref part="TR1" gate="G$1" pin="2"/>
 </segment>
 </net>
 <net name="N$12" class="0">
@@ -14719,7 +14753,7 @@ Standard 10-pin dual row 0.1" header. Commonly used with AVR-ISP. Use with Spark
 <wire x1="396.24" y1="170.18" x2="406.4" y2="170.18" width="0.1524" layer="91"/>
 <wire x1="406.4" y1="170.18" x2="406.4" y2="215.9" width="0.1524" layer="91"/>
 <junction x="396.24" y="170.18"/>
-<pinref part="3K1" gate="G$1" pin="1"/>
+<pinref part="R36" gate="G$1" pin="1"/>
 <wire x1="406.4" y1="215.9" x2="401.32" y2="215.9" width="0.1524" layer="91"/>
 <pinref part="R13" gate="G$1" pin="2"/>
 <wire x1="396.24" y1="147.32" x2="426.72" y2="147.32" width="0.1524" layer="91"/>
@@ -14755,7 +14789,7 @@ Standard 10-pin dual row 0.1" header. Commonly used with AVR-ISP. Use with Spark
 <wire x1="386.08" y1="215.9" x2="386.08" y2="246.38" width="0.1524" layer="91"/>
 <wire x1="386.08" y1="246.38" x2="381" y2="246.38" width="0.1524" layer="91"/>
 <pinref part="C6" gate="G$1" pin="1"/>
-<pinref part="3K1" gate="G$1" pin="2"/>
+<pinref part="R36" gate="G$1" pin="2"/>
 <wire x1="386.08" y1="215.9" x2="391.16" y2="215.9" width="0.1524" layer="91"/>
 <junction x="386.08" y="215.9"/>
 <pinref part="U1" gate="G$3" pin="+IN"/>
@@ -14764,7 +14798,7 @@ Standard 10-pin dual row 0.1" header. Commonly used with AVR-ISP. Use with Spark
 </net>
 <net name="N$20" class="0">
 <segment>
-<pinref part="3K3" gate="G$1" pin="2"/>
+<pinref part="R35" gate="G$1" pin="2"/>
 <wire x1="363.22" y1="246.38" x2="368.3" y2="246.38" width="0.1524" layer="91"/>
 <wire x1="368.3" y1="246.38" x2="368.3" y2="241.3" width="0.1524" layer="91"/>
 <pinref part="C6" gate="G$1" pin="2"/>
@@ -14971,7 +15005,7 @@ Standard 10-pin dual row 0.1" header. Commonly used with AVR-ISP. Use with Spark
 <segment>
 <pinref part="R34" gate="G$1" pin="2"/>
 <wire x1="467.36" y1="63.5" x2="467.36" y2="71.12" width="0.1524" layer="91"/>
-<pinref part="2M" gate="G$1" pin="1"/>
+<pinref part="R40" gate="G$1" pin="1"/>
 <wire x1="467.36" y1="71.12" x2="467.36" y2="81.28" width="0.1524" layer="91"/>
 <wire x1="480.06" y1="71.12" x2="467.36" y2="71.12" width="0.1524" layer="91"/>
 <junction x="467.36" y="71.12"/>
@@ -14981,11 +15015,11 @@ Standard 10-pin dual row 0.1" header. Commonly used with AVR-ISP. Use with Spark
 </net>
 <net name="N$39" class="0">
 <segment>
-<pinref part="2M" gate="G$1" pin="2"/>
+<pinref part="R40" gate="G$1" pin="2"/>
 <wire x1="490.22" y1="71.12" x2="500.38" y2="71.12" width="0.1524" layer="91"/>
 <wire x1="500.38" y1="71.12" x2="500.38" y2="58.42" width="0.1524" layer="91"/>
 <wire x1="500.38" y1="58.42" x2="513.08" y2="58.42" width="0.1524" layer="91"/>
-<pinref part="2M4" gate="G$1" pin="2"/>
+<pinref part="R41" gate="G$1" pin="2"/>
 <wire x1="513.08" y1="58.42" x2="513.08" y2="55.88" width="0.1524" layer="91"/>
 <pinref part="U3" gate="G$1" pin="OUT"/>
 <wire x1="495.3" y1="58.42" x2="500.38" y2="58.42" width="0.1524" layer="91"/>
@@ -14994,23 +15028,23 @@ Standard 10-pin dual row 0.1" header. Commonly used with AVR-ISP. Use with Spark
 </net>
 <net name="N$40" class="0">
 <segment>
-<pinref part="2M3" gate="G$1" pin="1"/>
+<pinref part="R38" gate="G$1" pin="1"/>
 <pinref part="PWM_POT" gate="G$1" pin="2"/>
 <wire x1="375.92" y1="45.72" x2="365.76" y2="45.72" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$42" class="0">
 <segment>
-<pinref part="2M3" gate="G$1" pin="2"/>
+<pinref part="R38" gate="G$1" pin="2"/>
 <wire x1="386.08" y1="45.72" x2="391.16" y2="45.72" width="0.1524" layer="91"/>
 <wire x1="391.16" y1="45.72" x2="391.16" y2="63.5" width="0.1524" layer="91"/>
-<pinref part="2M2" gate="G$1" pin="2"/>
+<pinref part="R37" gate="G$1" pin="2"/>
 <wire x1="391.16" y1="63.5" x2="391.16" y2="68.58" width="0.1524" layer="91"/>
 <wire x1="391.16" y1="68.58" x2="388.62" y2="68.58" width="0.1524" layer="91"/>
 <pinref part="U3" gate="G$2" pin="-IN"/>
 <wire x1="421.64" y1="63.5" x2="416.56" y2="63.5" width="0.1524" layer="91"/>
 <junction x="391.16" y="63.5"/>
-<pinref part="2M1" gate="G$1" pin="1"/>
+<pinref part="R39" gate="G$1" pin="1"/>
 <wire x1="416.56" y1="63.5" x2="391.16" y2="63.5" width="0.1524" layer="91"/>
 <wire x1="429.26" y1="73.66" x2="416.56" y2="73.66" width="0.1524" layer="91"/>
 <wire x1="416.56" y1="73.66" x2="416.56" y2="63.5" width="0.1524" layer="91"/>
@@ -15019,7 +15053,7 @@ Standard 10-pin dual row 0.1" header. Commonly used with AVR-ISP. Use with Spark
 </net>
 <net name="N$43" class="0">
 <segment>
-<pinref part="2M1" gate="G$1" pin="2"/>
+<pinref part="R39" gate="G$1" pin="2"/>
 <wire x1="439.42" y1="73.66" x2="449.58" y2="73.66" width="0.1524" layer="91"/>
 <wire x1="449.58" y1="73.66" x2="449.58" y2="58.42" width="0.1524" layer="91"/>
 <pinref part="U3" gate="G$2" pin="OUT"/>
@@ -15033,9 +15067,9 @@ Standard 10-pin dual row 0.1" header. Commonly used with AVR-ISP. Use with Spark
 </net>
 <net name="N$44" class="0">
 <segment>
-<pinref part="2M4" gate="G$1" pin="1"/>
+<pinref part="R41" gate="G$1" pin="1"/>
 <wire x1="513.08" y1="45.72" x2="513.08" y2="43.18" width="0.1524" layer="91"/>
-<pinref part="2M5" gate="G$1" pin="2"/>
+<pinref part="R42" gate="G$1" pin="2"/>
 <wire x1="513.08" y1="43.18" x2="513.08" y2="40.64" width="0.1524" layer="91"/>
 <wire x1="513.08" y1="43.18" x2="533.4" y2="43.18" width="0.1524" layer="91"/>
 <junction x="513.08" y="43.18"/>
@@ -15063,7 +15097,7 @@ Standard 10-pin dual row 0.1" header. Commonly used with AVR-ISP. Use with Spark
 </net>
 <net name="N$46" class="0">
 <segment>
-<pinref part="2M2" gate="G$1" pin="1"/>
+<pinref part="R37" gate="G$1" pin="1"/>
 <pinref part="PWM_ATT" gate="G$1" pin="2"/>
 <wire x1="378.46" y1="68.58" x2="375.92" y2="68.58" width="0.1524" layer="91"/>
 </segment>
