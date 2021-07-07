@@ -3194,7 +3194,7 @@ Standard 10-pin dual row 0.1" header. Commonly used with AVR-ISP. Use with Spark
 <part name="R11" library="GMSN" library_urn="urn:adsk.eagle:library:27425118" deviceset="RESISTOR_US" device="R0805" package3d_urn="urn:adsk.eagle:package:27425978/1" value="680R"/>
 <part name="GND10" library="GMSN" library_urn="urn:adsk.eagle:library:27425118" deviceset="GND" device=""/>
 <part name="C4" library="GMSN" library_urn="urn:adsk.eagle:library:27425118" deviceset="CAPACITOR-US" device="C0805" package3d_urn="urn:adsk.eagle:package:27425887/1" value="100pF"/>
-<part name="R7" library="GMSN" library_urn="urn:adsk.eagle:library:27425118" deviceset="RESISTOR_US" device="R0805" package3d_urn="urn:adsk.eagle:package:27425978/1" value="87k"/>
+<part name="R7" library="GMSN" library_urn="urn:adsk.eagle:library:27425118" deviceset="RESISTOR_US" device="R0805" package3d_urn="urn:adsk.eagle:package:27425978/1" value="75k"/>
 <part name="GND9" library="GMSN" library_urn="urn:adsk.eagle:library:27425118" deviceset="GND" device=""/>
 <part name="C8" library="GMSN" library_urn="urn:adsk.eagle:library:27425118" deviceset="CAPACITOR-US" device="C0805" package3d_urn="urn:adsk.eagle:package:27425887/1" value="22pF"/>
 <part name="R8" library="GMSN" library_urn="urn:adsk.eagle:library:27425118" deviceset="RESISTOR_US" device="R0805" package3d_urn="urn:adsk.eagle:package:27425978/1" value="3k3"/>
@@ -3293,7 +3293,6 @@ Standard 10-pin dual row 0.1" header. Commonly used with AVR-ISP. Use with Spark
 <part name="C16" library="GMSN" library_urn="urn:adsk.eagle:library:27425118" deviceset="CAPACITOR-US" device="C0805" package3d_urn="urn:adsk.eagle:package:27425887/1" value="100nF"/>
 <part name="C18" library="GMSN" library_urn="urn:adsk.eagle:library:27425118" deviceset="CAPACITOR-US" device="C0805" package3d_urn="urn:adsk.eagle:package:27425887/1" value="100nF"/>
 <part name="C19" library="GMSN" library_urn="urn:adsk.eagle:library:27425118" deviceset="CAPACITOR-US" device="C0805" package3d_urn="urn:adsk.eagle:package:27425887/1" value="100nF"/>
-<part name="R47" library="GMSN" library_urn="urn:adsk.eagle:library:27425118" deviceset="RESISTOR_US" device="R0805" package3d_urn="urn:adsk.eagle:package:27425978/1" value="0R"/>
 <part name="SAW_MIX" library="GMSN" library_urn="urn:adsk.eagle:library:27425118" deviceset="RESISTOR_VARIABLE" device="POT_9MM_BLUE_KNOB" package3d_urn="urn:adsk.eagle:package:27948773/2" value="B100k"/>
 <part name="TRI_MIX" library="GMSN" library_urn="urn:adsk.eagle:library:27425118" deviceset="RESISTOR_VARIABLE" device="POT_9MM_BLUE_KNOB" package3d_urn="urn:adsk.eagle:package:27948773/2" value="B100k"/>
 <part name="PULSE_MIX" library="GMSN" library_urn="urn:adsk.eagle:library:27425118" deviceset="RESISTOR_VARIABLE" device="POT_9MM_BLUE_KNOB" package3d_urn="urn:adsk.eagle:package:27948773/2" value="B100k"/>
@@ -4673,10 +4672,6 @@ Standard 10-pin dual row 0.1" header. Commonly used with AVR-ISP. Use with Spark
 <attribute name="NAME" x="135.636" y="31.115" size="1.778" layer="95"/>
 <attribute name="VALUE" x="135.636" y="26.289" size="1.778" layer="96"/>
 </instance>
-<instance part="R47" gate="G$1" x="0" y="53.34" smashed="yes" rot="R180">
-<attribute name="NAME" x="3.81" y="51.8414" size="1.778" layer="95" rot="R180"/>
-<attribute name="VALUE" x="3.81" y="56.642" size="1.778" layer="96" rot="R180"/>
-</instance>
 <instance part="R45" gate="G$1" x="152.4" y="68.58" smashed="yes">
 <attribute name="NAME" x="148.59" y="70.0786" size="1.778" layer="95"/>
 <attribute name="VALUE" x="148.59" y="65.278" size="1.778" layer="96"/>
@@ -4769,24 +4764,6 @@ Standard 10-pin dual row 0.1" header. Commonly used with AVR-ISP. Use with Spark
 <pinref part="R35" gate="G$1" pin="2"/>
 <wire x1="-20.32" y1="48.26" x2="-20.32" y2="60.96" width="0.1524" layer="91"/>
 <label x="-20.32" y="60.96" size="1.778" layer="95"/>
-</segment>
-</net>
-<net name="N$75" class="0">
-<segment>
-<wire x1="15.24" y1="53.34" x2="15.24" y2="40.64" width="0.1524" layer="91"/>
-<wire x1="15.24" y1="40.64" x2="17.78" y2="40.64" width="0.1524" layer="91"/>
-<wire x1="20.32" y1="40.64" x2="17.78" y2="40.64" width="0.1524" layer="91"/>
-<wire x1="17.78" y1="40.64" x2="17.78" y2="48.26" width="0.1524" layer="91"/>
-<wire x1="17.78" y1="48.26" x2="25.4" y2="48.26" width="0.1524" layer="91"/>
-<wire x1="25.4" y1="48.26" x2="25.4" y2="45.72" width="0.1524" layer="91"/>
-<junction x="17.78" y="40.64"/>
-<wire x1="15.24" y1="40.64" x2="7.62" y2="40.64" width="0.1524" layer="91"/>
-<junction x="15.24" y="40.64"/>
-<pinref part="TR4" gate="G$1" pin="1"/>
-<pinref part="TR4" gate="G$1" pin="2"/>
-<pinref part="IC5" gate="B" pin="OUT"/>
-<pinref part="R47" gate="G$1" pin="1"/>
-<wire x1="5.08" y1="53.34" x2="15.24" y2="53.34" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$76" class="0">
@@ -4939,8 +4916,19 @@ Standard 10-pin dual row 0.1" header. Commonly used with AVR-ISP. Use with Spark
 <wire x1="-15.24" y1="45.72" x2="-15.24" y2="53.34" width="0.1524" layer="91"/>
 <pinref part="IC5" gate="B" pin="-IN"/>
 <wire x1="-7.62" y1="43.18" x2="-15.24" y2="45.72" width="0.1524" layer="91"/>
-<pinref part="R47" gate="G$1" pin="2"/>
-<wire x1="-5.08" y1="53.34" x2="-15.24" y2="53.34" width="0.1524" layer="91"/>
+<wire x1="15.24" y1="53.34" x2="15.24" y2="40.64" width="0.1524" layer="91"/>
+<wire x1="15.24" y1="40.64" x2="17.78" y2="40.64" width="0.1524" layer="91"/>
+<wire x1="20.32" y1="40.64" x2="17.78" y2="40.64" width="0.1524" layer="91"/>
+<wire x1="17.78" y1="40.64" x2="17.78" y2="48.26" width="0.1524" layer="91"/>
+<wire x1="17.78" y1="48.26" x2="25.4" y2="48.26" width="0.1524" layer="91"/>
+<wire x1="25.4" y1="48.26" x2="25.4" y2="45.72" width="0.1524" layer="91"/>
+<junction x="17.78" y="40.64"/>
+<wire x1="15.24" y1="40.64" x2="7.62" y2="40.64" width="0.1524" layer="91"/>
+<junction x="15.24" y="40.64"/>
+<pinref part="TR4" gate="G$1" pin="1"/>
+<pinref part="TR4" gate="G$1" pin="2"/>
+<pinref part="IC5" gate="B" pin="OUT"/>
+<wire x1="-15.24" y1="53.34" x2="15.24" y2="53.34" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>
